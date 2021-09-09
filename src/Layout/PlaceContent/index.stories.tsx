@@ -11,7 +11,7 @@ export default {
 const children = <div>Text</div>
 
 const Template: ComponentStory<typeof PlaceContent> = (args) => {
-  return <Container padding="large" style={{minHeight: 300}}><PlaceContent {...args} style={{ minHeight: "inherit"}}/></Container>
+  return <Container padding="large" style={{minHeight: 300}} elevation={3}><PlaceContent {...args} style={{ minHeight: "inherit"}}/></Container>
 }
 
 export const TopLeft = Template.bind({});
@@ -21,10 +21,24 @@ TopLeft.args = {
   horizontalDirection: "left"
 };
 
+export const BottonLeft = Template.bind({});
+BottonLeft.args = {
+  children,
+  verticalDirection: "bottom",
+  horizontalDirection: "left"
+};
+
 export const TopRight = Template.bind({});
 TopRight.args = {
   children,
   verticalDirection: "top",
+  horizontalDirection: "right"
+};
+
+export const BottonRight = Template.bind({});
+BottonRight.args = {
+  children,
+  verticalDirection: "bottom",
   horizontalDirection: "right"
 };
 
@@ -40,20 +54,6 @@ CenterCenter.args = {
   children,
   verticalDirection: "center",
   horizontalDirection: "center"
-};
-
-export const BottonLeft = Template.bind({});
-BottonLeft.args = {
-  children,
-  verticalDirection: "bottom",
-  horizontalDirection: "left"
-};
-
-export const BottonRight = Template.bind({});
-BottonRight.args = {
-  children,
-  verticalDirection: "bottom",
-  horizontalDirection: "right"
 };
 
 export const BottonCenter = Template.bind({});
